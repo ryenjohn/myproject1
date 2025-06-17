@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Electronic</title>
+  <link rel="icon" type="image/png" href="image/logotitle.jpg">
+  <link rel="stylesheet" href="css/main.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/pdetail.css">
+</head>
+
+<body>
+  <header class="sticky-top">
+    <nav class="navbar navbar-expand-sm bg navbar-lihgt shadow sticky-top">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <div class="logo">
+             <img src="image/logoheading.png" alt="" class="img-fluid img-popular">
+          </div>
+          <h5 class="color fw-bold text-secondary">
+            ELECTRONIC
+          </h5>
+        </a>
+        <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+       
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">HOME</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="product.html">PRODUCT</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">ABOUT</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="blog.html">BLOG</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">CONTACT</a>
+            </li>
+          </ul>
+            <div class="search-container ">
+            <input type="text" placeholder="Searching for..." />
+            <button type="submit">
+              🔍
+            </button>
+          </div>
+        </div>
+        <div"" class="order ">
+          <i class="fa fa-shopping-cart" style="font-size:24px"></i>
+          <i class="fa fa-heart" style="font-size: 20px;"></i>
+        </div>
+      </div>
+      <div class="user border-start border-2 border-secondary ps-3">
+            <i style="font-size:23px" class="fa">&#xf007;</i>
+      </div>
+      <div>
+        <button class="login">
+          Login
+        </button>
+      </div>
+      <div class="dot-container">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+    </nav>
+    </header>
+
+    <!-- banner -->
+    <div class="banner-product"></div>
+    
+      <div class="product-container">
+        <div class="main-content">
+          <div class="filters-section">
+            <h2>
+              All Products
+            </h2>
+            <div class="category-dropdown-container">
+              <label for="categories">Product Brand :</label>
+              <select id="categories" class="category-dropdown">
+                <option value="all">All</option>
+                <option value="Apple">Apple</option>
+                <option value="Dell">Dell</option>
+                <option value="Lenovo">Lenovo</option>
+                <option value="Acer">Acer</option>
+                <option value="Samsung">Samsung</option>
+                <option value="Others">Others</option>
+              </select>
+            </div>
+          </div>
+        </div>   
+      </div>
+      <div id="product-grid" class="product-grid">
+            <!-- Product cards will be loaded here by JavaScript -->
+      </div>
+    
+    <!-- Start Filltering -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        // Define your product data
+        const products = [
+          //Apple
+          { id: 'macbook-air', name: 'Macbook Air M4 Chip', brand: 'Apple', price: '$1199', imageSrc: 'image/macbook M4.png' },
+          { id: 'macbook-air', name: 'Macbook Air M3 Chip', brand: 'Apple', price: '$1099', imageSrc: 'image/macbook3.png' },
+          { id: 'iphone-13', name: '13 Pro Max 512GB', brand: 'Apple', price: '$699', imageSrc: 'image/iphone12.png' },
+          { id: 'airpod-pro', name: 'AirPod Pro', brand: 'Apple', price: '$99', imageSrc: 'image/airpod.png' },
+          { id: 'vision-pro', name: 'Vision Pro', brand: 'Apple', price: '$999', imageSrc: 'image/vision.png' },
+          { id: 'airpod-bluetooth', name: 'AirPod Max', brand: 'Apple', price: '$120', imageSrc: 'image/airmax.png' },
+          { id: 'iwatch-pro', name: 'iWatch Series9', brand: 'Apple', price: '$80', imageSrc: 'image/iwatch_series_9.png' },
+          { id: 'mouse', name: 'Mouse', brand: 'Apple', price: '$20', imageSrc: 'image/mouse.png' },
+          //Samsung
+          { id: 'galaxy-s22', name: 'Samsung Galaxy S22', brand: 'Samsung', price: '$229', imageSrc: 'image/samsungphoneS22.png' },
+          { id: 'galaxy-s22', name: 'Samsung Galaxy S22', brand: 'Samsung', price: '$229', imageSrc: 'image/samsungphoneS22.png' },
+          { id: 'samsung', name: 'Samsung', brand: 'Samsung', price: '$300', imageSrc: 'image/lapsamsung.png' },
+          { id: 'samsung', name: 'Samsung', brand: 'Samsung', price: '$300', imageSrc: 'image/lapsamsung.png' },
+          //Lenovo
+          { id: 'ideapad-3', name: 'Lenovo IdeaPad 3', brand: 'Lenovo', price: '$350', imageSrc: 'image/lenovo3.png' },
+          { id: 'ideapad-3', name: 'Lenovo IdeaPad 3A5', brand: 'Lenovo', price: '$450', imageSrc: 'image/lenovo3.png' },
+          { id: 'ideapad-3', name: 'Lenovo IdeaPad 3A5', brand: 'Lenovo', price: '$450', imageSrc: 'image/lenovo3.png' },
+          { id: 'ideapad-3', name: 'Lenovo IdeaPad 3A5', brand: 'Lenovo', price: '$450', imageSrc: 'image/lenovo3.png' },
+          //Dell
+          { id: 'dell', name: 'Dell XPS 13', brand: 'Dell', price: '$330', imageSrc: 'image/accer.png' },
+          { id: 'dell', name: 'Dell Vistro 15', brand: 'Dell', price: '$430', imageSrc: 'image/accer.png' },
+          { id: 'dell', name: 'Dell XPS 15', brand: 'Dell', price: '$390', imageSrc: 'image/accer.png' },
+          { id: 'dell', name: 'Dell Vistro 16', brand: 'Dell', price: '$500', imageSrc: 'image/accer.png' },
+          //Acer
+          { id: 'acer', name: 'Accer Inspiron 15', brand: 'Acer', price: '$300', imageSrc: 'image/acer.png' },
+          { id: 'acer', name: 'Acer Aspire 5', brand: 'Acer', price: '$550', imageSrc: 'image/acer.png' },
+          { id: 'acer', name: 'Acer Swift 3', brand: 'Acer', price: '$400', imageSrc: 'image/acer.png' },
+          { id: 'acer', name: 'Acer Swift 3', brand: 'Acer', price: '$400', imageSrc: 'image/acer.png' },
+          //Others
+          { id: 'air-phone', name: 'AirPhone', brand: 'Others', price: '$10', imageSrc: 'image/air-phone.png' },
+          { id: 'air-phone', name: 'AirPhone', brand: 'Others', price: '$15', imageSrc: 'image/air-phone.png' },
+          { id: 'air-phone', name: 'AirPhone', brand: 'Others', price: '$5', imageSrc: 'image/air-phone.png' },
+          { id: 'air-phone', name: 'AirPhone', brand: 'Others', price: '$3.99', imageSrc: 'image/air-phone.png' },
+        ];
+
+        const categoryDropdown = document.getElementById('categories');
+        const productGrid = document.getElementById('product-grid');
+
+        // Function to render products in the grid
+        function renderProducts(productsToDisplay) {  
+          productGrid.innerHTML = ''; // Clear existing products
+
+          if (productsToDisplay.length === 0) {
+            productGrid.innerHTML = '<p class="text-center text-gray-500 w-full">No products found for this brand.</p>';
+            return;
+          }
+
+          productsToDisplay.forEach(product => {
+            const productCard = document.createElement('div');
+            productCard.classList.add('product-card');
+            productCard.innerHTML = `
+                          <img src="${product.imageSrc}" alt="${product.name}">
+                          <h5>${product.name}</h5>
+                          <p>${product.price}</p>
+                          <button class="add-to-cart-btn">Add to Cart</button>
+                      `;
+            productGrid.appendChild(productCard);
+          });
+        }
+
+        // Initial render of all products
+        renderProducts(products);
+
+        // Add an event listener to the dropdown for when its value changes
+        categoryDropdown.addEventListener('change', function () {
+          const selectedBrand = this.value;
+
+          let filteredProducts = [];
+          if (selectedBrand === 'all') {
+            filteredProducts = products; // Show all products
+          } else {
+            // Filter products by the selected brand
+            filteredProducts = products.filter(product => product.brand === selectedBrand);
+          }
+          renderProducts(filteredProducts); // Render the filtered products
+        });
+      });
+    </script>
+
+   <!-- End Filtering -->
+  <div class="space"></div>
+  <footer class="bg-dark">
+        <div class="container pt-5 pb-4">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+                    <h5 class="footer-color mb-4">My-Store</h5>
+                    <p class="text-white-50">
+                        Welcome to Micro Elec, your trusted destination for the latest smartphones, accessories,
+                        and mobile services. We offer a wide range of top-brand mobile phones, including Apple, Samsung, and more — all at competitive prices.
+                    </p>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+                    <h5 class="footer-color mb-0">Links</h5>
+                    <ul class="footer-link text-white-50">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="product.html">Product</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+                    <h5 class="footer-color mb-4">Contact Us</h5>
+                    <p class="text-white-50 mb-2">
+                        <i class="fa fa-map-o"></i> &nbsp;
+                        Tuek Tla, SenSok, Phnum Penh
+                    </p>
+                    <p class="text-white-50 mb-2">
+                        <i class="fa fa-envelope-o"></i> &nbsp;
+                        group3@gmail.com
+                    </p>
+                    <p class="text-white-50">
+                        <i class="fa fa-phone"></i> &nbsp;
+                        (+855) 88 89 02 583
+                    </p>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+                    <h5 class="footer-color mb-4">Follow Us</h5>
+                    <p class="text-white-50 footer-icon">
+                        <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook pe-2"></i></a>
+                        <a href=""><i class="fa fa-twitter pe-2"></i></a>
+                        <a href=""><i class="fa fa-instagram pe-2"></i></a>
+                        <a href=""><i class="fa fa-pinterest-p pe-2"></i></a>
+                    </p>
+                </div>
+            </div>
+            <p class="text-white-50">Copyright &copy;GROUP3 2025. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/pdetail.js"></script>
+</body>
+</html>

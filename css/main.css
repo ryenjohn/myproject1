@@ -1,0 +1,971 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Battambang:wght@100;300;400;700;900&family=Kaisei+Tokumin&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
+
+* {
+  font-family: "Open Sans", "Lato", sans-serif;
+  font-style: normal;
+}
+
+:root {
+  --text-pink: #d51a6b;
+  --text-pink-hover: #ae0a53;
+  --text-dark: #09011e;
+  --clr-pink: #d51a6b;
+  --bg-dark: #060113;
+  --bg-gray: #dbdbdb;
+  --bg-light-gray: rgba(255, 255, 255, .5) !important;
+  --border-pink: #d51a6b;
+}
+
+.clr-pink{
+  color: var(--text-pink);
+}
+.bg {
+  background-color:  #e1e8f0;
+  /* border: 1px solid #eee; */
+}
+.bg-gray{
+  background: var(--bg-gray);
+}
+
+.card {
+  border: 1px solid #eee;
+}
+.card:hover{
+  background-color: whitesmoke;
+}
+/* Product Container */
+
+.product-container {
+  font-family: "Open Sans", "Lato", sans-serif;
+  font-style: normal;
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* min-height: 100vh; */
+}
+
+
+.main-content {
+  width: 100%;
+  max-width: 1200px;
+  padding: 2px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.filters-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  gap: 15px; /* Space between filter elements */
+}
+
+.filters-section h2 {
+  font-size: 1.7rem;
+  /* font-weight: 700; */
+  /* color: #333; */
+}
+
+.category-dropdown-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.category-dropdown-container label {
+  font-weight: 600;
+  color: #555;
+}
+
+.category-dropdown {
+  padding: 3px 5px;
+  /* border: 1px solid #ccc; */
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #fff;
+  cursor: pointer;
+  outline: none;
+  transition: 0.3s ease;
+  font-family: sans-serif;
+}
+
+.category-dropdown:focus {
+  border-color: #007bff;
+}
+select{
+  color: #3498db;
+}
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  justify-content: center; /* This will center the grid items when there's extra space */
+  padding-left: 14%;
+  padding-right: 14%;
+  padding-top: 15px;
+}
+
+.product-card {
+  background-color: white;
+  border: 1px solid #eee;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  background-color: whitesmoke;
+}
+
+.product-card img {
+  max-width: 100%;
+  height: auto; /* Fixed height for product images */
+  object-fit: contain; /* Ensure image fits without cropping */
+  margin-bottom: 15px;
+  border-radius: 6px;
+}
+
+.product-card h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #333;
+  
+}
+
+.product-card p {
+  font-size: 1.2rem;
+  /* font-weight: 700; */
+  color: crimson;
+  margin-bottom: 15px;
+}
+button{
+  background-color: white;
+}
+.add-to-cart-btn {
+  display: inline;
+  padding: 8px 18px;
+  /* border-color: #007bff; */
+  /* background-color: #28a745; */
+  /* border-color: #28a745; */
+  color: #28a745 ;
+  text-decoration: none;
+  border: #28a745 1px solid;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #218838;
+  color: white;
+}
+
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .filters-section {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+  .filters-section h2 {
+      margin-bottom: 15px;
+  }
+}
+
+
+header {
+  background: url("../images/home.jpg") center/cover no-repeat;
+  background-attachment: fixed;
+}
+.banner-about {
+  background: url("../images/about.jpg") center/cover no-repeat; 
+  background-attachment: fixed;
+  height: 60vh;
+}
+.banner-blog {
+  background: url("../images/blogbanner.jpg") top/cover no-repeat; 
+  background-attachment: fixed;
+  height: 40vh;
+}
+.banner-contact {
+  background: url("../images/contact.jpg") top/cover no-repeat; 
+  /* background-attachment: fixed; */
+  height: 50vh;
+}
+.offer{
+  background: url("../images/offerbanner.jpg") top/cover no-repeat;
+  background-attachment: fixed;
+  min-height: 50vh;
+  position: relative;
+}
+.banner-product{
+  background: url("../images/product.jpg") top/cover no-repeat; 
+  background-attachment: fixed;
+  height: 60vh;
+}
+h4 {
+  font: bold;
+  color: #de1b5c;
+}
+.slide-title{
+  margin-top: 0;
+
+}
+
+.nav-tabs .nav-item .nav-link{
+  border: 1px solid #ccc !important;
+  color:#151517 !important;
+  margin-right: 10px !important;
+  margin-bottom: 10px;
+}
+.nav-tabs .nav-link.active{
+  background-color: #007bff !important;
+  color:#eee !important;
+}
+.fa-star{
+  color: var(--text-pink);
+}
+.tab-pane {
+  animation: fadeIn 0.5s ease-in-out; 
+}
+.sale{
+  width: 37px;
+  height: 35px;
+  background-color: var(--clr-pink);
+  margin: 8px;
+  line-height: 20px;
+  
+}
+.img-wrapper {  
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; 
+}
+.inner-img {
+  transition: 0.1s;
+}
+.inner-img:hover {
+  transform: scale(1.1);
+}
+
+.box-offer {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+}
+.img-popular{
+  width: 100px;
+}
+.space {
+  height: 80px;
+}
+.cursor :hover{
+  color: whitesmoke;
+}
+.footer-color{
+  color: var(--bg-light-gray);
+}
+.footer-link{
+  padding: 20px;
+}
+.footer-link li{
+  list-style-type: circle;
+  color: var(--bg-light-gray);
+  line-height: 2rem;
+}
+.footer-link li a{
+  text-decoration: none;
+  color:var(--bg-light-gray);
+}
+.footer-link li a:hover{
+  color:#f2eff0;
+}
+.footer-icon a{
+  color:var(--bg-light-gray);
+}
+.footer-icon a:hover{
+  color:#1b5fde;
+}
+/* Animation keyframes */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-10px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .slide-title{
+    margin-top: 60%;
+  }
+  .box-offer {
+    left: 35%;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .slide-title{
+    margin-top: 10%;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .slide-title{
+    margin-top: 50%;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .slide-title{
+    margin-top: 20%;
+  }
+}
+
+.old-price::before {
+  content: "$50.00";
+  text-decoration: line-through;
+  color: #333;
+  font-weight: normal;
+  margin-right: 8px;
+}
+
+.new-price::before {
+  content: "$30.00";
+  color: red;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.color {
+  display: flex;
+  margin: 0;
+}
+.navbar-nav {
+  font-weight: bold;
+}
+.pro  {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.dis {
+  font-weight: var(--border-pink);
+  font-size: 2rem;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  width: 400px;
+  border: 1.5px solid #ccc;
+  border-radius: 25px;
+  background-color: #fff;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.search-container input {
+  border: none;
+  outline: none;
+  flex: 1;
+  padding: 6px 6px;
+  margin-left: 10px;
+  font-size: 14px;
+  border-radius: 25px;
+}
+
+.search-container button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;  
+  color: #999;
+  padding: 2px;
+  margin-left: 5px;
+  margin-right: 15px;
+}
+
+.order{
+  display: flex;
+  align-items: center;
+  width: 0;
+  background: none;
+  cursor: pointer;
+  color: rgb(69, 69, 69);
+  gap: 1.5rem;
+}
+
+.login {
+  background-color: #e1e8f0; 
+  color: rgb(69, 69, 69); 
+  padding: 2px 5px; 
+  border: none; 
+  border-radius: 25px; 
+  cursor: pointer; 
+  font-size: 14px;
+  font-weight: bold; 
+  text-align: center;
+  text-decoration: none; 
+  display: inline-block; 
+  transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.3s ease; 
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.dot-container {
+    display: flex;
+    flex-direction: column; 
+    gap: 3px; 
+    cursor: pointer;
+}
+
+.dot {
+    width: 4px; 
+    height: 4px; 
+    background-color: rgb(69, 69, 69); 
+    border-radius: 50%; 
+    margin-right: 18px;
+    
+}
+.user {
+  display: flex;
+  margin-right: 15px;
+  cursor: pointer;
+  color: rgb(69, 69, 69);
+}
+.new {
+  display: flex;
+  font-size: 0.6rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* slide show */
+.slideshow-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto; 
+  position: relative;
+  overflow: hidden; 
+  padding-bottom: 35%; 
+  height: 0; 
+}
+
+/* Styles for each individual slide image */
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateX(100%);
+  opacity: 0;
+  
+  /* Apply animation for sliding from right to left */
+  animation: slideLeftAnimation 15s infinite; 
+  object-fit: cover; 
+  vertical-align: middle;
+  filter: brightness(0.85); 
+}
+
+/* Animation Keyframes: Slide from Right to Left */
+@keyframes slideLeftAnimation {
+  0% { transform: translateX(100%); opacity: 0; }
+  8% { transform: translateX(0%); opacity: 1; }  
+  25% { transform: translateX(0%); opacity: 1; } 
+  33% { transform: translateX(-100%); opacity: 0; } 
+  100% { transform: translateX(100%); opacity: 0; } 
+}
+
+/* Stagger the animations for each slide */
+.slide:nth-child(1) { animation-delay: 0s; }
+.slide:nth-child(2) { animation-delay: 5s; } 
+.slide:nth-child(3) { animation-delay: 10s; } 
+
+
+/* Optional: Overlay text for slides */
+.slide-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  width: 90%;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+  z-index: 1; 
+  opacity: 0; 
+  animation: textSlideAnimation 15s infinite; 
+}
+
+/* Animation for text overlay, moving slightly with the image */
+@keyframes textSlideAnimation {
+  0% { opacity: 0; transform: translate(0%, -50%); } 
+  8% { opacity: 1; transform: translate(-50%, -50%); }
+  25% { opacity: 1; transform: translate(-50%, -50%); }
+  33% { opacity: 0; transform: translate(-100%, -50%); }
+  100% { opacity: 0; transform: translate(0%, -50%); } 
+}
+
+/* Stagger text animations */
+.slide-text:nth-child(1) { animation-delay: 0s; }
+.slide-text:nth-child(2) { animation-delay: 5s; }
+.slide-text:nth-child(3) { animation-delay: 10s; }
+
+
+
+/* Example main content below the banner */
+.main-content {
+  max-width: 1200px;
+  width: 100%;
+  padding: 2rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+/* Responsive adjustments for text size */
+@media (max-width: 768px) {
+  .slide-text {
+      font-size: 2rem;
+  }
+}
+@media (max-width: 480px) {
+  .slide-text {
+      font-size: 1.5rem;
+      padding: 0 1rem;
+  }
+  .slideshow-container {
+      padding-bottom: 50%; 
+  }
+}
+.my-fixed-image {
+    width: 416px; 
+    height: 277px; 
+    object-fit: cover; 
+    display: block;
+}
+@media (max-width: 768px) {
+    .my-fixed-image {
+        width: 100%; 
+        height: auto; 
+        object-fit: unset;
+    }
+}
+
+/* client section start */
+
+
+main {
+    max-width: 600px; /* Adjust max-width for a single column layout */
+    margin: 2rem auto;
+    padding: 0 1rem;
+    /* Removed flex properties as there's only one main section now */
+}
+
+section {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    /* Removed flex properties as there's only one main section now */
+}
+
+h4 {
+    color: #34495e; /* Slightly lighter dark blue */
+    padding-bottom: 0.8rem;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+/* --- Feedback Form Styling --- */
+.feedback-form .form-group {
+    margin-bottom: 2rem;
+    margin-left: 40px;
+}
+
+.feedback-form label {
+    display: block; /* Makes labels appear on their own line */
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.feedback-form input[type="text"],
+.feedback-form input[type="email"],
+.feedback-form select,
+.feedback-form textarea {
+    width: calc(100% - 20px); /* Full width minus padding */
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.feedback-form input[type="text"]:focus,
+.feedback-form input[type="email"]:focus,
+.feedback-form select:focus,
+.feedback-form textarea:focus {
+    border-color: #3498db; /* Blue on focus */
+    outline: none; /* Remove default outline */
+}
+
+.feedback-form textarea {
+    resize: vertical; /* Allow vertical resizing by user */
+}
+
+.submit-button {
+    display: block; /* Already set */
+    /* Adjust width to something less than 100% to allow centering */
+    max-width: 250px; /* Or any width you prefer, e.g., 200px, 300px */
+    width: 100%; /* Ensures it's still responsive on small screens */
+    padding: 10px 20px;
+    background-color: #2ecc71; /* Green */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    /* Center the button */
+    margin: 1rem auto 0 auto; /* Top margin, then auto for left/right, 0 for bottom */
+}
+
+.submit-button:hover {
+    background-color: #27ae60; /* Darker green on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* --- Rating Stars Styling --- */
+.rating-stars {
+    display: flex;
+    flex-direction: row-reverse; /* Puts 5-star on the right */
+    justify-content: flex-end; /* Aligns stars to the left */
+    font-size: 1.5rem; /* Size of the stars */
+}
+
+.rating-stars input[type="radio"] {
+    display: none; /* Hide the actual radio buttons */
+}
+
+.rating-stars label {
+    cursor: pointer;
+    color: #ccc; /* Default star color (grey) */
+    transition: color 0.2s ease-in-out;
+    padding: 0 5px; /* Spacing between stars */
+    margin-bottom: 0; /* Override default label margin */
+}
+
+.rating-stars label:before {
+    content: '★'; /* Unicode star character */
+}
+
+.rating-stars input[type="radio"]:checked ~ label {
+    color: crimson; /* Gold color for selected stars and those to its left */
+}
+
+.rating-stars label:hover,
+.rating-stars label:hover ~ label {
+    color: crimson; /* Lighter gold on hover */
+}
+
+/* --- Responsive Design (for smaller screens) --- */
+@media (max-width: 768px) {
+    main {
+        padding: 0 0.5rem; /* Less horizontal padding */
+        margin: 1rem auto;
+    }
+
+    section {
+        padding: 1.5rem;
+    }
+
+    .feedback-form input[type="text"],
+    .feedback-form input[type="email"],
+    .feedback-form select,
+    .feedback-form textarea {
+        width: calc(100% - 16px); /* Adjust padding for smaller screens */
+    }
+}
+
+/* sponsor */
+.image-container {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap to the next line on smaller screens */
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+  gap: 200px; /* Space between images */
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  max-width: 100%;
+  width: 100%;
+}
+.image-wrapper {
+  flex-shrink: 0; /* Prevent images from shrinking below their content size */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px; /* Uniform height for all images */
+}
+.image-wrapper img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain; /* Ensures the entire image is visible within its container */
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .image-container {
+      padding: 20px;
+      gap: 30px;
+  }
+  .image-wrapper {
+      height: 60px; /* Smaller height for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .image-container {
+      gap: 20px;
+  }
+  .image-wrapper {
+      height: 50px; /* Even smaller height for very small screens */
+  }
+}
+
+/* Start Customer Say Secion */
+.client_section {
+  color: #007bff;
+  padding-top: 60px; /* Adjust padding as needed for spacing from top */
+  padding-bottom: 60px; /* Matches layout_padding-bottom equivalent */
+  background-color: #fefefe; /* A light background for the whole section */
+}
+
+.client_section .container {
+  max-width: 1400px; /* Standard container width, adjust if using Bootstrap's default */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.client_section .heading_container {
+  text-align: center;
+  margin-bottom: 45px; /* Spacing below the heading, as per HTML */
+}
+
+.client_section .heading_container h2 {
+  font-size: 2rem; /* Adjust heading size */
+  font-weight: none;
+  color: #333; /* Dark color for the heading */
+  margin-bottom: 0;
+}
+
+/* Pseudo-white-primary class - assuming it affects color or background for heading */
+/* If this changes text color, define it, e.g.: */
+.client_section .heading_container.psudo_white_primary h2 {
+  color: #000; /* Example: if 'primary' means dark text */
+  /* Or if it means a background effect: */
+  /* background-color: #ffbe33; */
+  /* color: #fff; */
+}
+
+
+/* Carousel Wrapper */
+.client_section .carousel-wrap {
+  /* If 'row' is a Bootstrap class, it will handle horizontal spacing */
+  /* Otherwise, ensure it has proper margin/padding for the carousel */
+  margin-left: -15px; /* Counteract padding from .container or Owl Carousel defaults */
+  margin-right: -15px; /* Counteract padding from .container or Owl Carousel defaults */
+}
+
+/* Individual Testimonial Item (.item is from Owl Carousel, .box is your custom wrapper) */
+.client_section .item {
+  padding: 0 15px; /* Padding for the space between items, works with Owl Carousel margin */
+}
+
+.client_section .box {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center content horizontally within the box */
+  margin: 15px; /* Spacing around each individual testimonial box */
+  background-color: #222831; /* Dark background for the testimonial box */
+  border-radius: 5px; /* Rounded corners for the box */
+  color: #ffffff; /* Default text color for inside the box */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  min-height: 30px; /* Ensure boxes have consistent height, adjust as needed */
+  justify-content: space-between; /* Pushes img-box to bottom, detail-box to top */
+}
+
+.client_section .box .detail-box {
+  padding: 25px 25px 15px 25px; /* Padding inside the text box */
+  border-radius: 5px; /* Matches outer box, good practice */
+  text-align: center; /* Center the text content */
+}
+
+.client_section .box .detail-box p {
+  margin-bottom: 1px; /* Spacing below the main quote */
+  font-size: 15px;
+}
+
+.client_section .box .detail-box h6 {
+  font-weight: 600;
+  font-size: 25px;
+  margin: 15px 0 5px 0; /* Spacing for the client name */
+  color: #ffbe33; /* Highlight name with brand color */
+}
+
+.client_section .box .img-box {
+  position: relative;
+  display: flex;
+  justify-content: center; /* Center the image within its box */
+  align-items: center; /* Center the image vertically */
+  width: 155px; /* Fixed width for the image container */
+  height: 155px; /* Make it square to properly contain a circular image */
+  margin-top: 5px; /* Space between text box and image box */
+  margin-bottom: -14px; /* Pulls the image box up to overlap the detail box */
+  z-index: 1; /* Ensure img-box is above detail-box for the overlap effect */
+}
+
+.client_section .box .img-box img {
+  width: 80%; /* Image takes full width of its container */
+  height: 80%; /* Image takes full height of its container */
+  border-radius: 100px; /* Make the image perfectly circular */
+  border: 1px solid cyan; /* Orange/yellow border */
+  object-fit: cover; /* Ensures image fills the circle without distortion, cropping if needed */
+  display: block; /* Removes extra space below image */
+}
+
+
+/* Pseudo-element for the triangle/arrow connecting image to detail box */
+.client_section .box .img-box::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0; /* Position at the top of the img-box */
+  width: 20px;
+  height: 20px;
+  transform: rotate(45deg) translateX(-50%); /* Rotate to diamond and center horizontally */
+  z-index: -1; /* Place it behind the image */
+  margin-top: -10px; /* Pull it slightly up to ensure it overlaps the detail-box */
+}
+
+/* Owl Carousel Navigation Arrows (next/prev buttons) */
+.client_section .owl-carousel .owl-nav {
+  display: flex;
+  justify-content: center; /* Center the navigation buttons */
+  margin-top: 45px; /* Space below the carousel items */
+  padding: 0 15px;
+}
+
+.client_section .owl-carousel .owl-nav .owl-prev,
+.client_section .owl-carousel .owl-nav .owl-next {
+  width: 35px;
+  height: 35px;
+  background-color: #007bff; /* Orange/yellow background */
+  color: #ffffff; /* White arrow icon */
+  outline: none; /* Remove focus outline */
+  border: none; /* Ensure no default button border */
+  font-size: 24px; /* Size of the arrow icon */
+  margin: 0 5px; /* Spacing between buttons */
+  border-radius: 100%; /* Make buttons circular */
+  display: flex; /* Use flexbox to center the icon */
+  justify-content: center;
+  align-items: center;
+  cursor: pointer; /* Indicate it's clickable */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.client_section .owl-carousel .owl-nav .owl-prev:hover,
+.client_section .owl-carousel .owl-nav .owl-next:hover {
+  background-color: #1b5fde; /* Slightly darker on hover */
+}
+
+/* Owl Carousel Dots (if enabled in JS, i.e., dots: true) */
+.client_section .owl-carousel .owl-dots {
+  text-align: center;
+  margin-top: 20px; /* Space below items or nav if nav is off */
+}
+
+.client_section .owl-carousel .owl-dots .owl-dot {
+  width: 12px;
+  height: 12px;
+  background-color: #ccc; /* Inactive dot color */
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.client_section .owl-carousel .owl-dots .owl-dot.active {
+  background-color: #007bff; /* Active dot color */
+}
+
+/* Responsive adjustments (example - you may need more detailed ones) */
+@media (max-width: 768px) {
+  .client_section .heading_container h2 {
+      font-size: 2rem;
+  }
+  .client_section .box {
+      margin: 10px;
+      min-height: auto; /* Allow height to adjust on smaller screens */
+  }
+  .client_section .box .detail-box {
+      padding: 20px;
+  }
+  .client_section .box .img-box {
+      width: 90px;
+      height: 90px;
+      margin-bottom: -40px; /* Adjust overlap */
+  }
+  .client_section .box .img-box::before {
+      margin-top: -8px; /* Adjust pseudo-element overlap */
+  }
+}
+
+@media (max-width: 480px) {
+  .client_section .box {
+      margin: 5px;
+  }
+  .client_section .box .detail-box p {
+      font-size: 14px;
+  }
+  .client_section .owl-carousel .owl-nav {
+      margin-top: 30px;
+  }
+}
+
+/* End Customer Section */
