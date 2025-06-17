@@ -234,7 +234,7 @@ h4 {
   margin-bottom: 10px;
 }
 .nav-tabs .nav-link.active{
-  background-color: #007bff !important;
+  background-color: #5baaff !important;
   color:#eee !important;
 }
 .fa-star{
@@ -581,140 +581,61 @@ h4 {
     }
 }
 
+/* user experice */
+
+.stars {
+  /* background-color: #f8f8f8; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+.rating-card {
+  border: 1px dashed #d1d5db; /* Light gray dashed border */
+  border-radius: 0.75rem; /* Rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  padding: 2rem;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 600px; /* Constrain width for a compact look */
+  width: 100%;
+  
+}
+
+.star {
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.star:hover {
+  transform: scale(1.1);
+}
+
+/* Keyframes for the pop animation */
+@keyframes pop {
+  0% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.08); /* Adjusted: Pop out to 108% size for a smaller pace */
+  }
+  100% {
+      transform: scale(1); /* Return to original size */
+  }
+}
+
+/* Class to apply the pop animation */
+.pop-animation {
+  animation: pop 0.3s ease-out; /* Run the pop animation over 0.3 seconds */
+}
+
+
+/* end user experience */
+
 /* client section start */
-
-
-main {
-    max-width: 600px; /* Adjust max-width for a single column layout */
-    margin: 2rem auto;
-    padding: 0 1rem;
-    /* Removed flex properties as there's only one main section now */
-}
-
-section {
-    background-color: #fff;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-    /* Removed flex properties as there's only one main section now */
-}
-
-h4 {
-    color: #34495e; /* Slightly lighter dark blue */
-    padding-bottom: 0.8rem;
-    margin-bottom: 1.5rem;
-    font-size: 1rem;
-}
-
-/* --- Feedback Form Styling --- */
-.feedback-form .form-group {
-    margin-bottom: 2rem;
-    margin-left: 40px;
-}
-
-.feedback-form label {
-    display: block; /* Makes labels appear on their own line */
-    margin-bottom: 0.5rem;
-    color: #555;
-}
-
-.feedback-form input[type="text"],
-.feedback-form input[type="email"],
-.feedback-form select,
-.feedback-form textarea {
-    width: calc(100% - 20px); /* Full width minus padding */
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
-}
-
-.feedback-form input[type="text"]:focus,
-.feedback-form input[type="email"]:focus,
-.feedback-form select:focus,
-.feedback-form textarea:focus {
-    border-color: #3498db; /* Blue on focus */
-    outline: none; /* Remove default outline */
-}
-
-.feedback-form textarea {
-    resize: vertical; /* Allow vertical resizing by user */
-}
-
-.submit-button {
-    display: block; /* Already set */
-    /* Adjust width to something less than 100% to allow centering */
-    max-width: 250px; /* Or any width you prefer, e.g., 200px, 300px */
-    width: 100%; /* Ensures it's still responsive on small screens */
-    padding: 10px 20px;
-    background-color: #2ecc71; /* Green */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.1s ease;
-    /* Center the button */
-    margin: 1rem auto 0 auto; /* Top margin, then auto for left/right, 0 for bottom */
-}
-
-.submit-button:hover {
-    background-color: #27ae60; /* Darker green on hover */
-    transform: translateY(-2px); /* Slight lift effect */
-}
-
-/* --- Rating Stars Styling --- */
-.rating-stars {
-    display: flex;
-    flex-direction: row-reverse; /* Puts 5-star on the right */
-    justify-content: flex-end; /* Aligns stars to the left */
-    font-size: 1.5rem; /* Size of the stars */
-}
-
-.rating-stars input[type="radio"] {
-    display: none; /* Hide the actual radio buttons */
-}
-
-.rating-stars label {
-    cursor: pointer;
-    color: #ccc; /* Default star color (grey) */
-    transition: color 0.2s ease-in-out;
-    padding: 0 5px; /* Spacing between stars */
-    margin-bottom: 0; /* Override default label margin */
-}
-
-.rating-stars label:before {
-    content: '★'; /* Unicode star character */
-}
-
-.rating-stars input[type="radio"]:checked ~ label {
-    color: crimson; /* Gold color for selected stars and those to its left */
-}
-
-.rating-stars label:hover,
-.rating-stars label:hover ~ label {
-    color: crimson; /* Lighter gold on hover */
-}
-
-/* --- Responsive Design (for smaller screens) --- */
-@media (max-width: 768px) {
-    main {
-        padding: 0 0.5rem; /* Less horizontal padding */
-        margin: 1rem auto;
-    }
-
-    section {
-        padding: 1.5rem;
-    }
-
-    .feedback-form input[type="text"],
-    .feedback-form input[type="email"],
-    .feedback-form select,
-    .feedback-form textarea {
-        width: calc(100% - 16px); /* Adjust padding for smaller screens */
-    }
-}
 
 /* sponsor */
 .image-container {
@@ -723,7 +644,7 @@ h4 {
   justify-content: center; /* Center items horizontally */
   align-items: center; /* Center items vertically */
   gap: 200px; /* Space between images */
-  background-color: #ffffff;
+  background-color: #ececec;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
@@ -766,206 +687,208 @@ h4 {
 }
 
 /* Start Customer Say Secion */
-.client_section {
-  color: #007bff;
-  padding-top: 60px; /* Adjust padding as needed for spacing from top */
-  padding-bottom: 60px; /* Matches layout_padding-bottom equivalent */
-  background-color: #fefefe; /* A light background for the whole section */
+
+.customer_say {
+  /* background-color: #51c3e6; */
+
 }
+        /* General Section Styling */
+        .client_section {
+          /* padding-top: 30px;
+          padding-bottom: 10px;
+          background-color: rgb(74, 175, 179);
+          color: #007bff; */
+          padding-top: 50px;
+      }
 
-.client_section .container {
-  max-width: 1400px; /* Standard container width, adjust if using Bootstrap's default */
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 15px;
-  padding-right: 15px;
-}
+      .client_section .container {
+          max-width: 1328px;
+          margin-left: auto;
+          margin-right: auto;
+          padding-left: 10px;
+          padding-right: 10px;
+          background-color: rgb(168, 163, 163);
+          border-radius: 10px;
+          
+      }
 
-.client_section .heading_container {
-  text-align: center;
-  margin-bottom: 45px; /* Spacing below the heading, as per HTML */
-}
+      .client_section .heading_container {
+          text-align: center;
+          margin-bottom: 40px;
+      }
 
-.client_section .heading_container h2 {
-  font-size: 2rem; /* Adjust heading size */
-  font-weight: none;
-  color: #333; /* Dark color for the heading */
-  margin-bottom: 0;
-}
+      .client_section .heading_container h2 {
+          font-size: 2rem; /* Increased for prominence */
+          font-weight: 500; /* Bold */
+          color: #333; /* Dark color for the heading */
+          margin-bottom: 0;
+          padding-top: 25px;
+      }
 
-/* Pseudo-white-primary class - assuming it affects color or background for heading */
-/* If this changes text color, define it, e.g.: */
-.client_section .heading_container.psudo_white_primary h2 {
-  color: #000; /* Example: if 'primary' means dark text */
-  /* Or if it means a background effect: */
-  /* background-color: #ffbe33; */
-  /* color: #fff; */
-}
+      /* Specific styles for the psudo_white_primary heading */
+      .client_section .heading_container.psudo_white_primary h2 {
+          color: #ffffff; /* Example: A dark subtle color, adjust as needed */
+      }
+
+      /* Carousel Wrapper */
+      .client_section .carousel-wrap.row {
+          margin: 0; /* Remove default row margins */
+          padding: 0 15px; /* Add padding for content inside carousel wrap */
+      }
+
+      /* Individual Testimonial Item */
+      .client_section .item {
+          padding: 0; /* Owl Carousel handles item spacing with margin option */
+      }
+
+      /* Testimonial Box/Card */
+      .client_section .box {
+          position: relative; /* For absolute positioning of the image */
+          display: flex;
+          flex-direction: column;
+          align-items: center; /* Center content horizontally */
+          /* Default background removed here, Tailwind classes will set individual backgrounds */
+          border-radius: 50px; /* More rounded corners */
+
+          padding: 15px; /* General padding for content */
+          padding-top: 60px; /* Adjusted: Space for the overlapping image at the top */
+          min-height: 200px; /* Adjusted: Ensure consistent height for carousel items */
+          text-align: center;
+          margin-top: 60px; /* Adjusted: Add margin to prevent card from overlapping header */
+          background: linear-gradient(-45deg, #0000cc, #0066ff, #3399ff, #66ccff);
+          background-size: 400% 400%;
+          animation: gradientMove 8s ease infinite;
+          color: white;
+      }
+
+      .client_section .box .detail-box {
+          /* No specific padding here, overall padding is on .box */
+          width: 100%; /* Take full width of parent */
+      }
+
+      .client_section .box .detail-box p {
+          margin-bottom: 0; /* Remove default paragraph margin */
+          font-size: 15px;
+          color: rgb(83, 83, 83); /* Lighter gray for member text */
+      }
+
+      .client_section .box .detail-box h6 {
+          font-weight: 600; /* Bold for name */
+          font-size: 18px; /* Adjusted: Smaller name font */
+          margin: 10px 0; /* Spacing for the client name */
+          color: rgb(240, 61, 61); /* Highlight name with brand color */
+      }
+
+      /* Image Box - positioned at the top */
+      .client_section .box .img-box {
+          position: absolute;
+          left: 50%;
+          top: 0; /* Position at the top edge of the card */
+          transform: translateX(-50%) translateY(-50%); /* Center horizontally and pull up by half its height */
+          z-index: 10; /* Ensure it's above the card content */
+          width: 120px; /* Diameter of the circle image */
+          height: 120px; /* Diameter of the circle image */
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          /* No margin-bottom or margin-top here, positioning is absolute */
+      }
+
+      .client_section .box .img-box img {
+          width: 100%; /* Image takes full width of its container */
+          height: 100%; /* Image takes full height of its container */
+          border-radius: 50%; /* Make the image perfectly circular */
+          border: 2px solid #ffffff; /* White border as per image */
+          object-fit: cover; /* Ensures image fills the circle without distortion */
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for the image */
+          background-color: #f8f8f8; /* Background for placeholder in case image fails */
+      }
+
+      /* Text below image */
+      .client_section .box .detail-box .mt-5 {
+          margin-top: 15px; /* Adjust spacing for "Good services!" text after the name */
+          font-size: 0.95rem; /* Adjusted: Slightly smaller font size */
+          line-height: 1.5;
+      }
 
 
-/* Carousel Wrapper */
-.client_section .carousel-wrap {
-  /* If 'row' is a Bootstrap class, it will handle horizontal spacing */
-  /* Otherwise, ensure it has proper margin/padding for the carousel */
-  margin-left: -15px; /* Counteract padding from .container or Owl Carousel defaults */
-  margin-right: -15px; /* Counteract padding from .container or Owl Carousel defaults */
-}
+      /* Owl Carousel Navigation Arrows */
+      .client_section .owl-carousel .owl-nav {
+          display: flex;
+          justify-content: center;
+          margin-top: 25px;
+          padding: 0; /* Remove default padding */
+      }
 
-/* Individual Testimonial Item (.item is from Owl Carousel, .box is your custom wrapper) */
-.client_section .item {
-  padding: 0 15px; /* Padding for the space between items, works with Owl Carousel margin */
-}
+      .client_section .owl-carousel .owl-nav .owl-prev,
+      .client_section .owl-carousel .owl-nav .owl-next {
+          width: 40px; /* Larger buttons */
+          height: 40px;
+          background-color: #007bff; /* Blue for arrows */
+          color: #ffffff;
+          font-size: 28px; /* Larger arrow icon */
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+          transition: background-color 0.3s ease, transform 0.2s ease;
+          margin: 0 10px; /* Spacing between arrows and dots */
+      }
 
-.client_section .box {
-  display: flex;
-  flex-direction: column; /* Stack elements vertically */
-  align-items: center; /* Center content horizontally within the box */
-  margin: 15px; /* Spacing around each individual testimonial box */
-  background-color: #222831; /* Dark background for the testimonial box */
-  border-radius: 5px; /* Rounded corners for the box */
-  color: #ffffff; /* Default text color for inside the box */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  min-height: 30px; /* Ensure boxes have consistent height, adjust as needed */
-  justify-content: space-between; /* Pushes img-box to bottom, detail-box to top */
-}
+      .client_section .owl-carousel .owl-nav .owl-prev:hover,
+      .client_section .owl-carousel .owl-nav .owl-next:hover {
+          background-color: #0056b3; /* Darker blue on hover */
+          transform: scale(1.05);
+      }
 
-.client_section .box .detail-box {
-  padding: 25px 25px 15px 25px; /* Padding inside the text box */
-  border-radius: 5px; /* Matches outer box, good practice */
-  text-align: center; /* Center the text content */
-}
+      /* Owl Carousel Dots */
+      .client_section .owl-carousel .owl-dots {
+          text-align: center;
+          margin-top: 15px; /* Space below items or nav */
+      }
 
-.client_section .box .detail-box p {
-  margin-bottom: 1px; /* Spacing below the main quote */
-  font-size: 15px;
-}
+      .client_section .owl-carousel .owl-dots .owl-dot {
+          width: 12px;
+          height: 12px;
+          background-color: #ccc; /* Inactive dot color */
+          border-radius: 50%;
+          display: inline-block;
+          margin: 0 5px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+      }
 
-.client_section .box .detail-box h6 {
-  font-weight: 600;
-  font-size: 25px;
-  margin: 15px 0 5px 0; /* Spacing for the client name */
-  color: #ffbe33; /* Highlight name with brand color */
-}
+      .client_section .owl-carousel .owl-dots .owl-dot.active {
+          background-color: #007bff; /* Active dot color */
+      }
 
-.client_section .box .img-box {
-  position: relative;
-  display: flex;
-  justify-content: center; /* Center the image within its box */
-  align-items: center; /* Center the image vertically */
-  width: 155px; /* Fixed width for the image container */
-  height: 155px; /* Make it square to properly contain a circular image */
-  margin-top: 5px; /* Space between text box and image box */
-  margin-bottom: -14px; /* Pulls the image box up to overlap the detail box */
-  z-index: 1; /* Ensure img-box is above detail-box for the overlap effect */
-}
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+          .client_section .box {
+              margin-top: 60px; /* Adjust top margin for smaller screens */
+              min-height: 280px;
+          }
+          .client_section .box .img-box {
+              width: 100px;
+              height: 100px;
+          }
+          .client_section .box .detail-box h6 {
+              font-size: 22px; /* Further adjust for smaller screens */
+          }
+          .client_section .box .detail-box .mt-5 {
+              margin-top: 10px;
+              font-size: 0.9rem;
+          }
+      }
 
-.client_section .box .img-box img {
-  width: 80%; /* Image takes full width of its container */
-  height: 80%; /* Image takes full height of its container */
-  border-radius: 100px; /* Make the image perfectly circular */
-  border: 1px solid cyan; /* Orange/yellow border */
-  object-fit: cover; /* Ensures image fills the circle without distortion, cropping if needed */
-  display: block; /* Removes extra space below image */
-}
-
-
-/* Pseudo-element for the triangle/arrow connecting image to detail box */
-.client_section .box .img-box::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 0; /* Position at the top of the img-box */
-  width: 20px;
-  height: 20px;
-  transform: rotate(45deg) translateX(-50%); /* Rotate to diamond and center horizontally */
-  z-index: -1; /* Place it behind the image */
-  margin-top: -10px; /* Pull it slightly up to ensure it overlaps the detail-box */
-}
-
-/* Owl Carousel Navigation Arrows (next/prev buttons) */
-.client_section .owl-carousel .owl-nav {
-  display: flex;
-  justify-content: center; /* Center the navigation buttons */
-  margin-top: 45px; /* Space below the carousel items */
-  padding: 0 15px;
-}
-
-.client_section .owl-carousel .owl-nav .owl-prev,
-.client_section .owl-carousel .owl-nav .owl-next {
-  width: 35px;
-  height: 35px;
-  background-color: #007bff; /* Orange/yellow background */
-  color: #ffffff; /* White arrow icon */
-  outline: none; /* Remove focus outline */
-  border: none; /* Ensure no default button border */
-  font-size: 24px; /* Size of the arrow icon */
-  margin: 0 5px; /* Spacing between buttons */
-  border-radius: 100%; /* Make buttons circular */
-  display: flex; /* Use flexbox to center the icon */
-  justify-content: center;
-  align-items: center;
-  cursor: pointer; /* Indicate it's clickable */
-  transition: background-color 0.3s ease; /* Smooth hover effect */
-}
-
-.client_section .owl-carousel .owl-nav .owl-prev:hover,
-.client_section .owl-carousel .owl-nav .owl-next:hover {
-  background-color: #1b5fde; /* Slightly darker on hover */
-}
-
-/* Owl Carousel Dots (if enabled in JS, i.e., dots: true) */
-.client_section .owl-carousel .owl-dots {
-  text-align: center;
-  margin-top: 20px; /* Space below items or nav if nav is off */
-}
-
-.client_section .owl-carousel .owl-dots .owl-dot {
-  width: 12px;
-  height: 12px;
-  background-color: #ccc; /* Inactive dot color */
-  border-radius: 50%;
-  display: inline-block;
-  margin: 0 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.client_section .owl-carousel .owl-dots .owl-dot.active {
-  background-color: #007bff; /* Active dot color */
-}
-
-/* Responsive adjustments (example - you may need more detailed ones) */
-@media (max-width: 768px) {
-  .client_section .heading_container h2 {
-      font-size: 2rem;
-  }
-  .client_section .box {
-      margin: 10px;
-      min-height: auto; /* Allow height to adjust on smaller screens */
-  }
-  .client_section .box .detail-box {
-      padding: 20px;
-  }
-  .client_section .box .img-box {
-      width: 90px;
-      height: 90px;
-      margin-bottom: -40px; /* Adjust overlap */
-  }
-  .client_section .box .img-box::before {
-      margin-top: -8px; /* Adjust pseudo-element overlap */
-  }
-}
-
-@media (max-width: 480px) {
-  .client_section .box {
-      margin: 5px;
-  }
-  .client_section .box .detail-box p {
-      font-size: 14px;
-  }
-  .client_section .owl-carousel .owl-nav {
-      margin-top: 30px;
-  }
-}
+      @media (max-width: 480px) {
+          .client_section .heading_container h2 {
+              font-size: 2rem;
+          }
+          .client_section .box {
+              padding-top: 60px;
+          }
+      }
 
 /* End Customer Section */
