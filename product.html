@@ -15,7 +15,7 @@
   <header class="sticky-top">
     <nav class="navbar navbar-expand-sm bg navbar-lihgt shadow sticky-top">
       <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="#">
+        <a href="index.html" class="navbar-brand d-flex align-items-center" href="#">
           <div class="logo">
              <img src="image/logoheading.png" alt="" class="img-fluid img-popular">
           </div>
@@ -50,7 +50,7 @@
           </div>
         </div>
         <div"" class="order ">
-          <i class="fa fa-shopping-cart" style="font-size:24px"></i>
+            <a href="shop.html"><i class="fa fa-shopping-cart" style="font-size:24px; color: rgb(69, 69, 69); text-decoration: none;"></i></a>
           <i class="fa fa-heart" style="font-size: 20px;"></i>
         </div>
       </div>
@@ -158,7 +158,7 @@
                           <img src="${product.imageSrc}" alt="${product.name}">
                           <h5>${product.name}</h5>
                           <p>${product.price}</p>
-                          <button class="add-to-cart-btn">Add to Cart</button>
+                          <a href="shop.html"><button class="add-to-cart-btn">Add to Cart</button></a>
                       `;
             productGrid.appendChild(productCard);
           });

@@ -1,0 +1,183 @@
+:root {
+  --text-pink: #d51a6b;
+  --text-pink-hover: #ae0a53;
+  --text-dark: #09011e;
+  --clr-pink: #d51a6b;
+  --bg-dark: #060113;
+  --bg-gray: #dbdbdb;
+  --bg-light-gray: rgba(255, 255, 255, .5) !important;
+  --border-pink: #d51a6b;
+}
+.bg {
+  background-color:  #e1e8f0;
+  /* border: 1px solid #eee; */
+}
+.bg-gray{
+  background: var(--bg-gray);
+}
+
+.footer-color{
+  color: var(--bg-light-gray);
+}
+.footer-link{
+  padding: 20px;
+}
+.footer-link li{
+  list-style-type: circle;
+  color: var(--bg-light-gray);
+  line-height: 2rem;
+}
+.footer-link li a{
+  text-decoration: none;
+  color:var(--bg-light-gray);
+}
+.footer-link li a:hover{
+  color:#f2eff0;
+}
+.footer-icon a{
+  color:var(--bg-light-gray);
+}
+.footer-icon a:hover{
+  color:#1b5fde;
+}
+
+
+body {
+            font-family: "Inter", sans-serif;
+            align-items: center;
+            /* Removed padding from body, will add to main content if necessary */
+        }
+        /* Custom styles for the wallet icon background */
+        .wallet-icon-bg {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23374151' opacity='0.3'%3E%3Cpath d='M21 4H3a2 2 0 00-2 2v13a2 2 0 002 2h18a2 2 0 002-2V6a2 2 0 00-2-2zM3 6h18v2H3V6zm0 13V9h18v10H3zm6-5a1 1 0 110-2 1 1 0 010 2z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 80px; /* Adjust size as needed */
+        }
+        /* Custom styles for the coins illustration background */
+        .coins-illustration-bg {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236B7280' opacity='0.3'%3E%3Cpath d='M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z'/%3E%3C/svg%3E"); /* Placeholder, replace with actual wallet/coins SVG if available */
+            background-repeat: no-repeat;
+            background-position: right bottom;
+            background-size: 120px; /* Adjust size as needed */
+        }
+
+        /* Specific icon background colors based on the image */
+        .cart-icon-bg {
+            background-color: #ef4444; /* red-500 */
+        }
+        .wishlist-icon-bg {
+            background-color: #3b82f6; /* blue-500 */
+        }
+        .ordered-icon-bg {
+            background-color: #22c55e; /* green-500 */
+        }
+        /* Custom styles for the navbar to ensure background color and responsiveness */
+        .navbar-top-bg {
+            background-color: #55526d; /* Dark purple/gray from screenshot top bar */
+        }
+        .navbar-main-bg {
+            background-color: #d1d9e2; /* Light blue/gray from screenshot main bar */
+        }
+
+
+.search-container {
+  display: flex;
+  align-items: center;
+  width: 400px;
+  border: 1.5px solid #ccc;
+  border-radius: 25px;
+  background-color: #fff;
+  margin-right: 20px;
+  margin-left: 15px;
+}
+
+.search-container input {
+  border: none;
+  outline: none;
+  flex: 1;
+  padding: 6px 6px;
+  margin-left: 10px;
+  font-size: 14px;
+  border-radius: 25px;
+}
+
+.search-container button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;  
+  color: #999;
+  padding: 2px;
+  margin-left: 5px;
+  margin-right: 15px;
+}
+
+/* .order{
+  display: flex;
+  align-items: center;
+  width: 0;
+  background: none;
+  cursor: pointer;
+  color: rgb(69, 69, 69);
+  gap: 1.5rem;
+} */
+a {
+  color: black;
+  text-decoration: none;
+}
+.login {
+  background-color: #e1e8f0; 
+  color: rgb(69, 69, 69); 
+  /* padding: 2px 5px;  */
+  border: none; 
+  border-radius: 25px; 
+  cursor: pointer; 
+  font-size: 14px;
+  font-weight: bold; 
+  text-align: center;
+  text-decoration: none; 
+  display: inline-block; 
+  transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.3s ease; 
+  /* margin-right: 15px; */
+  cursor: pointer;
+}
+
+.dot-container {
+    display: flex;
+    flex-direction: column; 
+    gap: 3px; 
+    cursor: pointer;
+}
+
+.dot {
+    width: 4px; 
+    height: 4px; 
+    background-color: rgb(69, 69, 69); 
+    border-radius: 50%; 
+    /* margin-right: 18px; */
+    
+}
+.user {
+  display: flex;
+  margin-right: 15px;
+  cursor: pointer;
+  color: rgb(69, 69, 69);
+}
+
+.nav-tabs .nav-item .nav-link{
+  border: 1px solid #ccc !important;
+  color:#151517 !important;
+  margin-right: 10px !important;
+  margin-bottom: 10px;
+}
+.nav-tabs .nav-link.active{
+  background-color: #5baaff !important;
+  color:#eee !important;
+}
+
+.menu {
+  display: flex;
+  margin-right: 20px;
+  margin-left: 0;
+}

@@ -1,0 +1,212 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronic</title>
+    <link rel="icon" type="image/png" href="image/logotitle.jpg">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/shop.css">
+</head>
+<body>
+    <!-- Top Navbar Section -->
+   <head class="sticky-top">
+        <nav class="navbar navbar-expand-sm bg navbar-lihgt shadow sticky-top">
+      <div class="container">
+        <a href="index.html" class="navbar-brand d-flex align-items-center" href="#">
+          <div class="logo">
+             <img src="image/logoheading.png" alt="" class="h-15 w-20 rounded-full">
+          </div>
+          <h5 class="color fw-bold text-secondary">
+            ELECTRONIC
+          </h5>
+        </a>
+        <div class="navbar m-2">
+            <!-- Navigation Links (Hidden on small screens, shown with hamburger menu if desired) -->
+            <div class="menu md:flex items-center space-x-4 text-secondary font-bold ">
+                <a href="index.html" class="hover:text-gray-700 transition duration-200 ease-in-out">HOME</a>
+                <a href="product.html" class="hover:text-gray-700 transition duration-200 ease-in-out">PRODUCT</a>
+                <a href="about.html" class="hover:text-gray-700 transition duration-200 ease-in-out">ABOUT</a>
+                <a href="blog.html" class="hover:text-gray-700 transition duration-200 ease-in-out">BLOG</a>
+                <a href="contact.html" class="hover:text-gray-700 transition duration-200 ease-in-out">CONTACT</a>
+            </div>
+       
+
+            <!-- Search Bar and Icons -->
+            <div class="">
+                <div class="search-container ">
+                <input type="text" placeholder="Searching for..." />
+                    <button type="submit">
+                        🔍
+                    </button>
+                </div>
+            </div>
+                <div class="order space-x-4 d-flex gap-2">
+                    <a href="shop.html"><i class="fa fa-shopping-cart" style="font-size:20px; color: rgb(69, 69, 69); text-decoration: none;"></i></a>
+                    <i class="fa fa-heart" style="font-size: 20px; color: rgb(69, 69, 69); text-decoration: none;"></i>
+                    <div>
+                    <button class="login">
+                        Login
+                    </button>
+                </div>
+                <div class="dot-container">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
+            
+            </div>
+            <!-- <div class="flex items-center space-x-4">
+                <div class="relative flex items-center">
+                    <input type="text" placeholder="Searching for..." class="pl-4 pr-10 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full md:w-64 text-gray-700">
+                    <button class="absolute right-3 text-gray-500 hover:text-blue-600">
+                        <i class="fas fa-search">🔍</i>
+                    </button>
+                </div>
+                <a href="#" class="text-gray-700 hover:text-blue-600 transition duration-200 ease-in-out">
+                    <i class="fas fa-shopping-cart text-xl"></i>
+                </a>
+                <a href="#" class="text-gray-700 hover:text-blue-600 transition duration-200 ease-in-out">
+                    <i class="fas fa-heart text-xl"></i>
+                </a>
+                <a href="#" class="flex items-center text-gray-700 hover:text-blue-600 transition duration-200 ease-in-out">
+                    <i class="fas fa-user-circle text-xl mr-1"></i>
+                    <span>Login</span>
+                </a>
+            </div> -->
+        </div>
+    </nav>
+   </head>
+
+    <!-- Main Content Container - Adjusted margin-top to account for fixed navbar if needed -->
+    <div class="container mx-auto max-w-5xl p-8"> <!-- Added mt-8 for spacing below navbar -->
+        <!-- Wallet Balance Section -->
+        <div class="relative bg-gray-800 text-white p-6 md:p-8 rounded-xl shadow-lg mb-8 overflow-hidden
+                    flex flex-col md:flex-row justify-between items-start md:items-center
+                    wallet-icon-bg coins-illustration-bg">
+            <div class="flex-grow">
+                <h2 class="text-gray-400 text-sm mb-1">Wallet Balance</h2>
+                <p class="text-5xl font-bold mb-6">1,200$</p>
+                <div class="border-b border-gray-600 mb-6 w-full md:w-3/4"></div>
+                <h2 class="text-gray-400 text-sm mb-2">Last Recharge</h2>
+                <p class="text-2xl font-semibold mb-6">250$</p>
+                <button class="flex items-center px-6 py-3 bg-gray-700 hover:bg-gray-600 text-white rounded-full
+                                shadow-md transition duration-300 ease-in-out">
+                    <i class="fas fa-plus mr-2"></i> Recharge Wallet
+                </button>
+            </div>
+            <!-- Placeholder for the wallet/coins illustration.
+                 In a real app, this would be a more complex SVG or image.
+                 For now, it's handled by background images in CSS. -->
+        </div>
+
+        <!-- Product & Package Sections -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Product Stats Section -->
+            <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg">
+                <div class="space-y-6">
+                    <!-- Products in Cart -->
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 flex items-center justify-center rounded-full cart-icon-bg text-white shadow-md">
+                            <i class="fas fa-shopping-cart text-lg"></i>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-semibold text-gray-800">10</p>
+                            <p class="text-gray-500 text-sm">Products in Cart</p>
+                        </div>
+                    </div>
+
+                    <!-- Products in Wishlist -->
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 flex items-center justify-center rounded-full wishlist-icon-bg text-white shadow-md">
+                            <i class="fas fa-heart text-lg"></i>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-semibold text-gray-800">5</p>
+                            <p class="text-gray-500 text-sm">Products in Wishlist</p>
+                        </div>
+                    </div>
+
+                    <!-- Total Products Ordered -->
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 flex items-center justify-center rounded-full ordered-icon-bg text-white shadow-md">
+                            <i class="fas fa-box text-lg"></i>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-semibold text-gray-800">15</p>
+                            <p class="text-gray-500 text-sm">Total Products Ordered</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Purchased Package Section -->
+            <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg flex flex-col justify-between">
+                <div>
+                    <h2 class="text-gray-800 text-xl font-semibold mb-4">Purchased Package</h2>
+                    <p class="text-orange-500 text-lg font-medium mb-6">Package Not Found</p>
+                </div>
+                <button class="w-full py-3 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-xl
+                                shadow-md transition duration-300 ease-in-out">
+                    Upgrade Package
+                </button>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-dark">
+    <div class="container pt-5 pb-4">
+      <div class="row">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+          <h5 class="footer-color mb-4 fw-bold">My-Store</h5>
+          <p class="text-white-50">
+            Welcome to Micro Elec, your trusted destination for the latest smartphones, accessories, 
+            and mobile services. We offer a wide range of top-brand mobile phones, including Apple, Samsung, and more — all at competitive prices.
+          </p>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+          <h5 class="footer-color mb-0 fw-bold">Links</h5>
+          <ul class="footer-link text-white-50">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="product.html">Product</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+          <h5 class="footer-color mb-4 fw-bold">Contact Us</h5>
+          <p class="text-white-50 mb-2">
+            <i class="fa fa-map"></i> &nbsp;
+            Tuek Tla, SenSok, Phnum Penh
+          </p>
+          <p class="text-white-50 mb-2">
+            <i class="fa fa-envelope"></i> &nbsp;
+            group3@gmail.com
+          </p>
+          <p class="text-white-50">
+            <i class="fa fa-phone"></i> &nbsp;
+            (+855) 88 89 02 583
+          </p>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+          <h5 class="footer-color mb-4 fw-bold">Follow Us</h5>
+          <p class="text-white-50 footer-icon">
+            <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f p-2"></i></a>
+            <a href=""><i class="fab fa-twitter p-2"></i></a>
+            <a href=""><i class="fab fa-instagram p-2"></i></a>
+            <a href=""><i class="fab fa-pinterest-p pe-2"></i></a>
+          </p>
+        </div>
+        <p class="text-white-50">Copyright &copy;GROUP3 2025. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/pdetail.js"></script>
+</body>
+</html>

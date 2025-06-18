@@ -150,9 +150,13 @@ select{
   /* font-weight: 700; */
   color: crimson;
   margin-bottom: 15px;
+  text-decoration: none;
 }
 button{
   background-color: white;
+}
+.product-card a {
+    text-decoration: none;
 }
 .add-to-cart-btn {
   display: inline;
@@ -421,7 +425,10 @@ h4 {
   color: rgb(69, 69, 69);
   gap: 1.5rem;
 }
-
+a {
+  color: black;
+  text-decoration: none;
+}
 .login {
   background-color: #e1e8f0; 
   color: rgb(69, 69, 69); 
@@ -581,62 +588,6 @@ h4 {
     }
 }
 
-/* user experice */
-
-.stars {
-  /* background-color: #f8f8f8; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px;
-}
-.rating-card {
-  border: 1px dashed #d1d5db; /* Light gray dashed border */
-  border-radius: 0.75rem; /* Rounded corners */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Subtle shadow */
-  padding: 2rem;
-  background-color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  max-width: 600px; /* Constrain width for a compact look */
-  width: 100%;
-  
-}
-
-.star {
-  cursor: pointer;
-  transition: transform 0.2s ease-in-out;
-}
-
-.star:hover {
-  transform: scale(1.1);
-}
-
-/* Keyframes for the pop animation */
-@keyframes pop {
-  0% {
-      transform: scale(1);
-  }
-  50% {
-      transform: scale(1.08); /* Adjusted: Pop out to 108% size for a smaller pace */
-  }
-  100% {
-      transform: scale(1); /* Return to original size */
-  }
-}
-
-/* Class to apply the pop animation */
-.pop-animation {
-  animation: pop 0.3s ease-out; /* Run the pop animation over 0.3 seconds */
-}
-
-
-/* end user experience */
-
-/* client section start */
-
 /* sponsor */
 .image-container {
   display: flex;
@@ -644,12 +595,13 @@ h4 {
   justify-content: center; /* Center items horizontally */
   align-items: center; /* Center items vertically */
   gap: 200px; /* Space between images */
-  background-color: #ececec;
+  background-color: #f0f0f0;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   max-width: 100%;
   width: 100%;
+  border: 1px solid gainsboro;
 }
 .image-wrapper {
   flex-shrink: 0; /* Prevent images from shrinking below their content size */
@@ -685,20 +637,18 @@ h4 {
       height: 50px; /* Even smaller height for very small screens */
   }
 }
+/* End sponsor */
 
 /* Start Customer Say Secion */
 
-.customer_say {
-  /* background-color: #51c3e6; */
-
-}
         /* General Section Styling */
         .client_section {
           /* padding-top: 30px;
           padding-bottom: 10px;
           background-color: rgb(74, 175, 179);
           color: #007bff; */
-          padding-top: 50px;
+          padding-bottom: 80px;
+          padding-top: 30px;
       }
 
       .client_section .container {
@@ -707,9 +657,10 @@ h4 {
           margin-right: auto;
           padding-left: 10px;
           padding-right: 10px;
-          background-color: rgb(168, 163, 163);
+          /* background-color: rgb(168, 163, 163); */
+          background-color: #ffffff;
           border-radius: 10px;
-          
+          padding-top: 5px;
       }
 
       .client_section .heading_container {
@@ -757,8 +708,8 @@ h4 {
           margin-top: 60px; /* Adjusted: Add margin to prevent card from overlapping header */
           background: linear-gradient(-45deg, #0000cc, #0066ff, #3399ff, #66ccff);
           background-size: 400% 400%;
-          animation: gradientMove 8s ease infinite;
-          color: white;
+          animation: gradientMove 6s ease infinite;
+          /* color: white; */
       }
 
       .client_section .box .detail-box {
@@ -857,6 +808,7 @@ h4 {
           margin: 0 5px;
           cursor: pointer;
           transition: background-color 0.3s ease;
+          margin-bottom: 20px;
       }
 
       .client_section .owl-carousel .owl-dots .owl-dot.active {
